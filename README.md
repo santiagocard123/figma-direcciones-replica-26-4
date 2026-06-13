@@ -10,11 +10,13 @@ https://santiagocard123.github.io/figma-direcciones-replica-26-4/
 
 - `index.html`: estructura HTML.
 - `styles.css`: estilos extraidos/aproximados desde la referencia visual.
-- `assets/night-bokeh-background.png`: fondo bitmap generado para recrear el asset visual.
-- `assets/jala-logo.svg`: aproximacion vectorial del logotipo.
+- `assets/Container.png`: fondo exportado desde el diseno.
+- `assets/Vector.svg`: logotipo exportado desde el diseno.
+- `assets/6bb9e7873e33b62efc18207fb8f56c5920d5f42d.jpg`: imagen fuente del fondo.
 - `evidence/figma-reference-thumbnail.webp`: referencia publica disponible desde Figma.
 - `evidence/replica-fullpage.png`: screenshot local del resultado.
 - `evidence/published-fullpage.png`: screenshot del sitio publicado.
+- `evidence/replica-fixed-frame.png`: screenshot actualizado con frame fijo de 1280x832.
 - `evidence/figma-dev-attempt.png`: evidencia del intento de abrir Dev Mode desde automatizacion.
 
 ## Nota de acceso

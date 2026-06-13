@@ -20,8 +20,11 @@ body {
 }
 
 body {
-  overflow: hidden;
-  background: var(--page);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: auto;
+  background: #f4f4f4;
   color: var(--text);
   font-family: Inter, Arial, sans-serif;
 }
@@ -33,21 +36,22 @@ a {
 
 .auth-screen {
   position: relative;
-  width: 100vw;
-  min-height: 100vh;
+  flex: 0 0 1280px;
+  width: 1280px;
+  height: 832px;
   overflow: hidden;
+  background: var(--page);
   isolation: isolate;
 }
 
 .background {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
   z-index: -3;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: saturate(1.08) contrast(1.05) brightness(0.86);
+  width: 800px;
+  height: 832px;
+  object-fit: fill;
 }
 
 .shade {
@@ -55,57 +59,35 @@ a {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(circle at 78% 52%, rgba(25, 130, 255, 0.1), transparent 23%),
-    linear-gradient(90deg, rgba(1, 5, 10, 0.98) 0%, rgba(1, 5, 10, 0.93) 23%, rgba(1, 5, 10, 0.7) 43%, rgba(1, 5, 10, 0.14) 75%, rgba(1, 5, 10, 0.18) 100%);
-}
-
-.shade::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.45) 0 1px, transparent 1.4px),
-    radial-gradient(circle, rgba(88, 174, 255, 0.28) 0 1px, transparent 1.5px);
-  background-position: 64% 17%, 73% 22%;
-  background-size: 92px 78px, 130px 112px;
-  opacity: 0.28;
-  mask-image: linear-gradient(90deg, transparent 0%, transparent 37%, #000 57%, #000 100%);
+    linear-gradient(90deg, #01060b 0 37.5%, rgba(1, 6, 11, 0.96) 44%, rgba(1, 6, 11, 0.42) 63%, rgba(1, 6, 11, 0.04) 100%),
+    linear-gradient(180deg, rgba(1, 6, 11, 0.26), rgba(1, 6, 11, 0.08));
 }
 
 .brand {
   position: absolute;
-  top: 59px;
-  left: 55px;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  color: white;
-}
-
-.brand img {
-  width: 43px;
-  height: 43px;
+  top: 85px;
+  left: 80px;
   display: block;
 }
 
-.brand span {
-  font-size: 19px;
-  line-height: 0.92;
-  font-weight: 700;
-  letter-spacing: 0;
+.brand img {
+  width: 180px;
+  height: 56px;
+  display: block;
 }
 
 .signin-card {
   position: absolute;
-  top: 258px;
-  left: 55px;
-  width: 382px;
+  top: 276px;
+  left: 80px;
+  width: 345px;
+  max-width: 345px;
 }
 
 .signin-card h1 {
   margin: 0;
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 24px;
+  line-height: 31px;
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -113,8 +95,8 @@ a {
 .signin-card > p {
   margin: 3px 0 30px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 form {
@@ -132,12 +114,12 @@ label {
 
 input {
   width: 100%;
-  height: 58px;
-  border: 1px solid var(--field-border);
-  border-radius: 0;
+  height: 53px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
   background: var(--field);
   color: white;
-  font: 500 13px/1 Inter, Arial, sans-serif;
+  font: 500 16px/1 Inter, Arial, sans-serif;
   outline: none;
 }
 
@@ -147,11 +129,11 @@ input::placeholder {
 
 form > input,
 .password-field input {
-  padding: 0 18px;
+  padding: 0 15px;
 }
 
 form > input {
-  margin-bottom: 21px;
+  margin-bottom: 22px;
 }
 
 .password-field {
@@ -168,8 +150,8 @@ form > input {
   top: 0;
   right: 0;
   display: grid;
-  width: 50px;
-  height: 58px;
+  width: 47px;
+  height: 53px;
   place-items: center;
   padding: 0;
   border: 0;
@@ -179,8 +161,8 @@ form > input {
 }
 
 .password-field svg {
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -202,11 +184,11 @@ form > input {
 .remember {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   margin: 0;
   color: rgba(255, 255, 255, 0.62);
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 13px;
+  line-height: 16px;
   font-weight: 400;
 }
 
@@ -220,20 +202,20 @@ form > input {
 
 .form-options a {
   color: #178bff;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 13px;
+  line-height: 16px;
   font-weight: 600;
 }
 
 .submit {
   width: 100%;
-  height: 55px;
+  height: 49px;
   border: 0;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--blue), var(--blue-2));
   color: white;
   box-shadow: 0 12px 32px rgba(22, 134, 255, 0.24);
-  font: 700 13px/1 Inter, Arial, sans-serif;
+  font: 700 16px/1 Inter, Arial, sans-serif;
   cursor: pointer;
 }
 
@@ -241,8 +223,8 @@ form > input {
   margin: 31px 0 0;
   color: rgba(255, 255, 255, 0.48);
   text-align: center;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .signup a {
@@ -253,9 +235,9 @@ form > input {
 
 .testimonial {
   position: absolute;
-  right: 57px;
-  bottom: 52px;
-  width: min(648px, 49vw);
+  left: 537px;
+  bottom: 44px;
+  width: 600px;
   min-height: 126px;
   padding: 25px 27px 22px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -307,39 +289,4 @@ form > input {
   color: rgba(255, 255, 255, 0.5);
   font-size: 10px;
   line-height: 13px;
-}
-
-@media (max-width: 760px) {
-  body {
-    overflow: auto;
-  }
-
-  .auth-screen {
-    min-height: 760px;
-  }
-
-  .brand {
-    top: 36px;
-    left: 28px;
-  }
-
-  .signin-card {
-    top: 150px;
-    left: 28px;
-    width: calc(100% - 56px);
-    max-width: 382px;
-  }
-
-  .testimonial {
-    right: auto;
-    left: 28px;
-    bottom: 28px;
-    width: calc(100% - 56px);
-  }
-
-  .shade {
-    background:
-      linear-gradient(180deg, rgba(1, 5, 10, 0.98) 0%, rgba(1, 5, 10, 0.9) 58%, rgba(1, 5, 10, 0.58) 100%),
-      linear-gradient(90deg, rgba(1, 5, 10, 0.94), rgba(1, 5, 10, 0.3));
-  }
 }
