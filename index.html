@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jala University - Sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="auth-screen" aria-label="Jala University sign in">
+      <img
+        class="background"
+        src="assets/night-bokeh-background.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="shade" aria-hidden="true"></div>
+
+      <a class="brand" href="#" aria-label="Jala University">
+        <img src="assets/jala-logo.svg" alt="" />
+        <span>Jala<br />University</span>
+      </a>
+
+      <section class="signin-card" aria-labelledby="signin-title">
+        <h1 id="signin-title">Nice to see you again</h1>
+        <p>Log in to continue your learning journey</p>
+
+        <form>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@example.com" />
+
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="********"
+            />
+            <button type="button" aria-label="Show password">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M2.4 12s3.3-6 9.6-6 9.6 6 9.6 6-3.3 6-9.6 6-9.6-6-9.6-6Z"
+                />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="form-options">
+            <label class="remember">
+              <input type="checkbox" />
+              <span>Remember me</span>
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button class="submit" type="submit">Sign in</button>
+        </form>
+
+        <p class="signup">
+          Don't have an account?
+          <a href="#">Create account</a>
+        </p>
+      </section>
+
+      <aside class="testimonial" aria-label="Student testimonial">
+        <blockquote>
+          "Jala University gave me the skills and the community to land my first
+          software engineering role - 100% online, at my own pace."
+        </blockquote>
+        <div class="author">
+          <span class="avatar">JP</span>
+          <span>
+            <strong>Juan Perez</strong>
+            <small>Software Engineer | Class of 2026</small>
+          </span>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
